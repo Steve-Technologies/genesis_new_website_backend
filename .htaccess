@@ -1,3 +1,0 @@
-PassengerAppType node
-PassengerStartupFile app.js     # or server.js or index.js (whichever is your entry)
-PassengerNodejs /opt/cpanel/ea-nodejs22/bin/node
