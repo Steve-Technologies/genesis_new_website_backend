@@ -1,0 +1,24 @@
+{
+  "name": "genesis_new_website_backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steve-Technologies/genesis_new_website_backend.git"
+  },
+  "author": "Steve Sajan Jacob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Steve-Technologies/genesis_new_website_backend/issues"
+  },
+  "homepage": "https://github.com/Steve-Technologies/genesis_new_website_backend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
