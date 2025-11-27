@@ -1,0 +1,4 @@
+PassengerAppType node
+PassengerStartupFile app.js     # or server.js or index.js (whichever is your entry)
+PassengerAppRoot /home/USERNAME/nodeapp
+PassengerNodejs /usr/local/bin/node
