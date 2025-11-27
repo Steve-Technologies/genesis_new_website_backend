@@ -1,8 +1,8 @@
-import express from 'express';
+const express = require('express');
 const app = express();
 
-app.get('/test', (req, res) => {
-  res.json({ message: 'Test endpoint is working!' });
+app.post('/submit_form', (req, res) => {
+  res.json({ message: 'Form submitted successfully!' });
 });
 
 app.get('/', (req, res) => {
@@ -15,4 +15,4 @@ app.listen(port, () => {
   console.log(`App running on port ${port}`);
 });
 // Do NOT use app.listen() — Passenger handles it
-export default app;
+module.exports = app;
