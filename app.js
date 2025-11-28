@@ -24,8 +24,8 @@ app.post('/submit_form', async (req, res) => {
 
 const transporter = nodemailer.createTransport({
   host: "6.188.205.92.host.secureserver.net",
-  port: 587,
-  secure: false,
+  port: 465,
+  secure: true,
   auth: {
     user: "notifications@genesisnextgen.com",
     pass: "Notifgen@54321",
