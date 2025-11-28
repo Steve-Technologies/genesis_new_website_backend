@@ -22,18 +22,25 @@ app.post('/submit_form', async (req, res) => {
 
     console.log(`📝 Preparing email for form: ${form_name}`);
 
-    const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: "6.188.205.92.host.secureserver.net",
-  port: 465,
-  secure: true,
+  port: 587,
+  secure: false,
   auth: {
-    user: "notifications@genesisnextgen.com",  // valid mailbox
-    pass: "Notifgen@54321",                   // your correct password
+    user: "notifications@genesisnextgen.com",
+    pass: "Notifgen@54321",
   },
   tls: {
-    rejectUnauthorized: false
+    rejectUnauthorized: false,
+    keepAlive: true
   }
 });
+transporter_details = null
+transporter.verify((err, success) => {
+  transporter_details = { err, success };
+  console.log("SMTP VERIFY:", err || success);
+});
+
     to_mail= 'enquiries@genesisnextgen.com'
     if (mode !== "production") {
       to_mail= 'dev@genesisnextgen.com'
@@ -56,13 +63,14 @@ app.post('/submit_form', async (req, res) => {
     await transporter.sendMail(mailOptions);
 
     console.log("✅ Email sent successfully!");
-    res.json({ message: 'Form submitted successfully!' });
+    res.json({ message: 'Form submitted successfully!' , transporter_details });
 
   } catch (error) {
     console.error("❌ Email send error:", error);
     res.status(500).json({
       error: "Failed to send email",
-      details: error.message
+      details: error.message, 
+      transporter_details
     });
   }
 });
