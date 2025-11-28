@@ -6,7 +6,8 @@ app.use(express.json());
 
 // POST /submit_form
 app.post('/submit_form', async (req, res) => {
-  console.log("📩 /submit_form endpoint hit");  
+  mode = req.body.mode || "production";
+  console.log("📩 /submit_form endpoint hit");
   console.log("➡ Incoming body:", req.body);
 
   try {
@@ -30,10 +31,13 @@ app.post('/submit_form', async (req, res) => {
         pass: "Notifgen@54321",
       }
     });
-
+    to_mail= 'enquiries@genesisnextgen.com'
+    if (mode !== "production") {
+      to_mail= 'dev@genesisnextgen.com'
+    }
     const mailOptions = {
       from: "notifications@genesisnextgen.com",
-      to: "enquiries@genesisnextgen.com",
+      to: to_mail,
       subject: `${form_name} from www.genesisnextgen.com`,
       text: notification_body,
       html: `
