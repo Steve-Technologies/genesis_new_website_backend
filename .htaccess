@@ -1,0 +1,5 @@
+Options -MultiViews
+PassengerEnabled on
+PassengerAppRoot /home/genesisnextgen/public_html/api.genesisnextgen.com
+PassengerStartupFile app.js
+PassengerNodejs /opt/cpanel/ea-nodejs20/bin/node

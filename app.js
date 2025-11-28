@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the Genesis New Website Backend!' });
 });
 
+app.get('/status', (req, res) => {
+  res.json({ status: 'OK' });
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
