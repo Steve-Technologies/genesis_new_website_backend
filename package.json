@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Steve-Technologies/genesis_new_website_backend#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.11"
   }
 }
