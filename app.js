@@ -23,14 +23,17 @@ app.post('/submit_form', async (req, res) => {
     console.log(`📝 Preparing email for form: ${form_name}`);
 
     const transporter = nodemailer.createTransport({
-      host: "6.188.205.92.host.secureserver.net",
-      port: 465,
-      secure: true,
-      auth: {
-        user: "notifications@genesisnextgen.com",
-        pass: "Notifgen@54321",
-      }
-    });
+  host: "6.188.205.92.host.secureserver.net",
+  port: 465,
+  secure: true,
+  auth: {
+    user: "notifications@genesisnextgen.com",  // valid mailbox
+    pass: "Notifgen@54321",                   // your correct password
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+});
     to_mail= 'enquiries@genesisnextgen.com'
     if (mode !== "production") {
       to_mail= 'dev@genesisnextgen.com'
